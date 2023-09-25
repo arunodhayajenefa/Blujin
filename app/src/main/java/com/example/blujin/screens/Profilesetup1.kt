@@ -41,7 +41,7 @@ import com.example.blujin.R
 import com.example.blujin.ui.theme.md_theme_dark_primaryContainer
 import com.example.blujin.ui.theme.md_theme_light_primary
 import com.example.blujin.ui.theme.md_theme_light_secondary
-import java.time.format.TextStyle
+
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -184,7 +184,14 @@ fun profilesetup(
                                         }
 
                                         // Display the data usage value
-                                        DisplayText(value)
+                                        Column(
+                                            verticalArrangement = Arrangement.Center,
+                                            horizontalAlignment = Alignment.CenterHorizontally
+                                        ) {
+                                            Text(
+                                                text = value, fontSize = 18.35.sp, color = Color.Black
+                                            )
+                                        }
 
                                     }
                                     Text(text = desc, fontSize = 10.sp, color = Color.Black)
@@ -198,12 +205,12 @@ fun profilesetup(
                                 Divider(modifier = Modifier
                                     .fillMaxWidth()
                                     .weight(1f)
-                                    .padding(5.dp), thickness = 2.dp)
+                                    .padding(5.dp), thickness = 2.dp, color = Color.Gray)
                                 CircularProgressbar1(value = "2", desc = "Link profile")
                                 Divider(modifier = Modifier
                                     .fillMaxWidth()
                                     .weight(1f)
-                                    .padding(5.dp), thickness = 2.dp)
+                                    .padding(5.dp), thickness = 2.dp, color = Color.Gray)
                                 CircularProgressbar1(value = "3", desc = "Preference")
                             }
                             Spacer(modifier = Modifier.padding(bottom = 35.dp))
@@ -372,7 +379,7 @@ fun DisplayText(value: String) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = value, fontSize = 18.35.sp
+            text = value, fontSize = 18.35.sp, color = Color.Gray
         )
     }
 }
