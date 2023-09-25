@@ -88,7 +88,6 @@ fun profilesetup(
                             .clip(
                                 shape = RoundedCornerShape(30.dp)
                             )
-                            .border(width = 1.dp, color = Color.LightGray)
                             .background(color = Color(0xFFE6EEF6)),
                         contentAlignment = Alignment.Center,
                     ) {
@@ -188,7 +187,7 @@ fun profilesetup(
                                         DisplayText(value)
 
                                     }
-                                    Text(text = desc, fontSize = 10.sp)
+                                    Text(text = desc, fontSize = 10.sp, color = Color.Black)
 
 
 //        ButtonProgressbar {
@@ -389,7 +388,8 @@ fun DisplayText(value: String) {
 @Composable
 fun EditableText() {
     var isEditMode by remember { mutableStateOf(false) }
-    var text by remember { mutableStateOf("Akash kumar jenishvar") }
+    var text by remember { mutableStateOf("Devon Bennetts") }
+
 
 
     if (isEditMode) {
@@ -425,7 +425,11 @@ fun EditableText() {
                 .fillMaxWidth()
                 .padding(top = 10.dp, bottom = 10.dp), horizontalArrangement = Arrangement.Center
         ) {
-            Text(text)
+            Text(
+                text,
+                color = Color.Gray, // Change the text color
+                modifier = Modifier.padding(end = 8.dp)
+            )
             Icon(tint=MaterialTheme.colorScheme.primary,
                 imageVector = Icons.Default.Edit,
                 contentDescription = "Edit",
